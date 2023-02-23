@@ -24,6 +24,7 @@ const List = () => {
       </button>
       {listItems.length > 0 && (
         <ul>
+          <ListItems valuex={1} key={1} />
           {listItems.map((item) => (
             <React.Fragment key={item}>
               <ListItems valuex={item} />
