@@ -1,39 +1,13 @@
-import React, { useState } from "react";
-import ListItems from "./ListItems";
+import React from 'react';
+import ListItems from './ListItems';
 
-const List = () => {
-  const [listItems, setListItems] = useState([]);
-
-  const handleButtonClick = () => {
-    const n = document.getElementById("input").value;
-    const items = [];
-
-    for (let i = 1; i <= n; i++) {
-      items.push(i);
-    }
-
-    setListItems(items);
-  };
-
-  return (
+ const List = ({listx}) =>{
+  return(
+    // code here
     <>
-      <label htmlFor="input">Enter a number:</label>
-      <input type="number" id="input" />
-      <button id="button" onClick={handleButtonClick}>
-        Generate List
-      </button>
-      {listItems.length > 0 && (
-        <ul>
-          <ListItems valuex={1} key={1} />
-          {listItems.map((item) => (
-            <React.Fragment key={item}>
-              <ListItems valuex={item} />
-            </React.Fragment>
-          ))}
-        </ul>
-      )}
-    </>
-  );
-};
+      <ListItems valuex={listx}/>
+      </>
+  )
+}
 
 export default List;
